@@ -1,8 +1,5 @@
-/*
-* SPDX-FileCopyrightText: 2022-2023 Espressif Systems (Shanghai) CO LTD
-*
-* SPDX-License-Identifier: Apache-2.0
-*/
+//Estudiande: Johnder Telemin Morales 2022-1140
+//Profesor: Carlos Pichardo
 
 #include <stdio.h>
 #include <stdint.h>
@@ -85,7 +82,7 @@ static volatile bool timer_expirado = 0;
 
 esp_mqtt_client_handle_t mqtt_client = NULL;
 
-/* ── MQTT ─────────────────────────────────────────────────────────────── */
+// MQTT //
 
 static void log_error_if_nonzero(const char *message, int error_code)
 {
@@ -156,7 +153,7 @@ static void mqtt5_app_start(void)
     esp_mqtt_client_start(mqtt_client);
 }
 
-/* ── TIMER ───────────────────────────────────────────────────────────── */
+// TIMER //
 
 static void vTimerCallback(TimerHandle_t pxTimer)
 {
@@ -180,7 +177,7 @@ static esp_err_t set_timer(void)
     return ESP_OK;
 }
 
-/* ── MAQUINA DE ESTADOS ───────────────────────────────────────────────── */
+// MAQUINA DE ESTADOS //
 
 int Func_Estado_Inicio(void)
 {
@@ -326,7 +323,7 @@ int Func_Estado_Error(void)
     return 0;
 }
 
-/* ── APP MAIN ─────────────────────────────────────────────────────────── */
+// APP MAIN //
 
 void app_main(void)
 {
